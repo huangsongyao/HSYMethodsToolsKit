@@ -7,12 +7,22 @@
 //
 
 #import "HSYAppDelegate.h"
+#import "NSString+Replace.h"
+#import "NSDate+Timestamp.h"
 
 @implementation HSYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSArray *groups1 = [@"123456789" hsy_replaceDiminishingSections:2];
+    NSArray *groups2 = [@"123456789" hsy_replaceIncreasingSections:2];
+    
+    NSDate *date = [NSDate hsy_realDate];
+    NSDate *nextDay = date.hsy_tomorrow;
+    NSDate *lastDay = date.hsy_yesterday;
+    NSDate *nextMonts = date.hsy_nextMonths;
+    NSDate *lastMonts = date.hsy_lastMonths;
     return YES;
 }
 

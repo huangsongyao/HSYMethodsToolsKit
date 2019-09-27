@@ -1,0 +1,52 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - HSYMacroKit (0.1.1)
+  - HSYMethodsToolsKit (0.1.0):
+    - HSYMacroKit
+    - JSONModel
+    - ReactiveObjC
+    - SDWebImage
+  - JSONModel (1.8.0)
+  - ReactiveObjC (3.1.1)
+  - SDWebImage (5.2.0):
+    - SDWebImage/Core (= 5.2.0)
+  - SDWebImage/Core (5.2.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - HSYMacroKit (from `https://github.com/huangsongyao/HSYMacroKit.git`)
+  - HSYMethodsToolsKit (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FBSnapshotTestCase
+    - JSONModel
+    - ReactiveObjC
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  HSYMacroKit:
+    :git: https://github.com/huangsongyao/HSYMacroKit.git
+  HSYMethodsToolsKit:
+    :path: "../"
+
+CHECKOUT OPTIONS:
+  HSYMacroKit:
+    :commit: d78d5afe2962ee249b008c2482c392469598b458
+    :git: https://github.com/huangsongyao/HSYMacroKit.git
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  HSYMacroKit: 2040c2a0ee06ff247a3ffe909cdd2be9a2224072
+  HSYMethodsToolsKit: d81e0e12b9f71576a8bc7978b3c012b22579a77d
+  JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDWebImage: 609192dcf3898c910a2848032372ead951e66364
+
+PODFILE CHECKSUM: aa50149824d3158930d1a070e03977c6ce4c35bb
+
+COCOAPODS: 1.7.5
