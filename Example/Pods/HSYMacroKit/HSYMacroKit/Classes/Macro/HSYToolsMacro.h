@@ -40,8 +40,25 @@
 #define IPHONE_WIDTH_RESOLUTION_RATIO                                   (IPHONE_WIDTH * IPHONE_SCALE)
 
 
+
+//以4.7寸iPhone6、iPhone6s为模板，动态计算其他屏幕的宽高
+#define WIDTHS_OF_SCALE(x)                                              ((x) * (IPHONE_WIDTH / 375.0))
+#define HEIGHTS_OF_SCALE(x)                                             ((x) * (IPHONE_HEIGHT / 667.0))
+
+
+
 //设备系统
 #define IPHONE_SYSTEM_VERSION                                           [[[UIDevice currentDevice] systemVersion] floatValue]
+
+
+
+//刘海屏
+#define IS_iPhoneX \
+({BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);})
 
 
 //获取RGB颜色
@@ -104,6 +121,7 @@ _Pragma("clang diagnostic pop") \
 
 //方法可用限制
 #define HSY_NS_AVAILABLE_IOS(versions)                  NS_AVAILABLE_IOS(versions)
+#define HSY_AVAILABLE_IOS_8                             HSY_NS_AVAILABLE_IOS(8_0)
 #define HSY_AVAILABLE_IOS_9                             HSY_NS_AVAILABLE_IOS(9_0)
 #define HSY_AVAILABLE_IOS_10                            HSY_NS_AVAILABLE_IOS(10_0)
 #define HSY_AVAILABLE_IOS_11                            HSY_NS_AVAILABLE_IOS(11_0)

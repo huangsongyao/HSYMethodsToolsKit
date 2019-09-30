@@ -37,3 +37,16 @@ NSInteger const kDefaultFindFailureIndex = -20181212;
 }
 
 @end
+
+@implementation NSArray (JSON)
+
+- (NSData *)hsy_toJSONData
+{
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:self
+                                                   options:NSJSONWritingPrettyPrinted
+                                                     error:&error];
+    return data;
+}
+
+@end

@@ -39,4 +39,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface NSArray (JSON)
+
+/**
+ NSArray JSON 转 NSData JSON
+ 
+ @return NSData JSON
+ */
+- (NSData *)hsy_toJSONData;
+
+@end
+
 NS_ASSUME_NONNULL_END

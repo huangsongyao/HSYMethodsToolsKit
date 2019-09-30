@@ -83,7 +83,7 @@ static UIImage *createImageWithColor(UIColor *color, CGRect rect)
 
 + (UIImage *)hsy_captureImageInView:(UIView *)view
 {
-    UIGraphicsBeginImageContextWithOptions(view.hsy_size, view.opaque, 0.0);
+    UIGraphicsBeginImageContextWithOptions(view.size, view.opaque, 0.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

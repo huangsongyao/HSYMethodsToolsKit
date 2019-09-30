@@ -9,6 +9,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonCryptor.h>
 #import <CommonCrypto/CommonHMAC.h>
+#import "HSYToolsMacro.h"
 
 @implementation NSData (Encrypt)
 

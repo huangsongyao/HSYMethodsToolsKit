@@ -37,11 +37,18 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)hsy_setRuntimeValue:(id)object;
 
 /**
- 获取对象的类名
+ 获取对象的类名，返回的是指针runtime类名，例如NSDictionary会返回__NSDictionaryI
  
- @return 类名
+ @return 例如NSDictionary会返回__NSDictionaryI
  */
 - (Class)hsy_objectRuntimeClass;
+
+/**
+ 获取对象的类名，返回的是指针真实名，例如NSDictionary会返回NSDictionary
+
+ @return 例如NSDictionary会返回NSDictionary
+ */
+- (NSString *)hsy_objectRuntimeClassName;
 
 /**
  通过Ivar来获取属性成员的类名

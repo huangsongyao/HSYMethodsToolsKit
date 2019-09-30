@@ -9,6 +9,7 @@
 #import "ReactiveObjC.h"
 #import "NSObject+Property.h"
 #import "NSObject+Runtime.h"
+#import "HSYToolsMacro.h"
 
 static NSString *kHSYMethodsToolsRuntimeDelegateForKey      = @"HSYMethodsToolsRuntimeDelegateForKey";
 
@@ -20,7 +21,7 @@ kHSYMethodsToolsKitRuntimeObjectClass const hsyString       = @"string";
 
 @implementation UIViewControllerRuntimeObject
 
-+ (instancetype)initWithDictionary:(NSDictionary<kHSYMethodsToolsKitRuntimeObjectClass,id> *)dictionary
++ (instancetype)initWithDictionary:(NSDictionary<kHSYMethodsToolsKitRuntimeObjectClass, id> *)dictionary
 {
     UIViewControllerRuntimeObject *object = [NSObject hsy_objectRuntimeValues:dictionary
                                                                       classes:[UIViewControllerRuntimeObject class]];

@@ -6,6 +6,8 @@
 //
 
 #import "NSObject+Runtime.h"
+#import "HSYToolsMacro.h"
+#import "NSString+Replace.h"
 
 @implementation NSObject (Runtime) 
 
@@ -95,6 +97,12 @@
     }
     Class classes = object_getClass(self);
     return classes;
+}
+
+- (NSString *)hsy_objectRuntimeClassName
+{
+    NSString *className = [NSStringFromClass(self.hsy_objectRuntimeClass) hsy_stringByReplacingOccurrencesOfSymbol:@"__"];
+    return [className substringToIndex:(className.length - 1)];
 }
 
 #pragma mark - Get Property Type Name

@@ -6,6 +6,7 @@
 //
 
 #import "NSDate+Timestamp.h"
+#import "HSYToolsMacro.h"
 
 NSString *const kHSYMethodsToolsForMonday                               = @"星期一";
 NSString *const kHSYMethodsToolsForTuesday                              = @"星期二";
@@ -222,7 +223,7 @@ kHSYMethodsToolsKitDateFormater const DateFormater_HHmm                 = @"HH:m
                               @(kHSYMethodsToolsKitWeekStateFriday) : kHSYMethodsToolsForFriday,
                               @(kHSYMethodsToolsKitWeekStateSaturday) : kHSYMethodsToolsForSaturday,};
     NSString *week = weekday[@(self.class.hsy_weekdayEnum)];
-    return week;
+    return HSYLOCALIZED(week);
 }
 
 + (kHSYMethodsToolsKitWeekState)hsy_weekdayEnum

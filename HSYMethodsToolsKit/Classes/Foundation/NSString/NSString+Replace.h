@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)hsy_stringByTrimmingCharacters;
 
 /**
- 过滤字符串中的空格符
+ 过滤字符串中所有的空格符
  
  @return 无空格符的字符串
  */
@@ -77,7 +77,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return 金额格式化，保留小数点后2位
  */
-- (NSString *)formattingByMoneys;
+- (NSString *)hsy_formattingByMoneys;
 
 @end
 

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param string 字符串内容
  @return 字符串的显示区域
  */
-+ (CGSize)boundingRectWithSize:(CGSize)maxSize font:(UIFont *)font forString:(NSString *)string;
++ (CGSize)hsy_boundingRectWithSize:(CGSize)maxSize font:(UIFont *)font forString:(NSString *)string;
 
 /**
  计算self字符串的显示区域
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param font 字体字号
  @return 字符串的显示区域
  */
-- (CGSize)boundingRectWithSize:(CGSize)maxSize font:(UIFont *)font;
+- (CGSize)hsy_boundingRectWithSize:(CGSize)maxSize font:(UIFont *)font;
 
 /**
  计算self字符串在固定最大显示宽度为widths后，计算出的显示区域
@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param font 字体字号
  @return 字符串的显示区域
  */
-- (CGSize)boundingRectWithWidths:(CGFloat)widths font:(UIFont *)font;
+- (CGSize)hsy_boundingRectWithWidths:(CGFloat)widths font:(UIFont *)font;
 
 /**
  计算self字符串在固定最大显示高度为heights后，计算出的显示区域
@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param font 字体字号
  @return 字符串的显示区域
  */
-- (CGSize)boundingRectWithHeights:(CGFloat)heights font:(UIFont *)font;
+- (CGSize)hsy_boundingRectWithHeights:(CGFloat)heights font:(UIFont *)font;
 
 @end
 

@@ -8,6 +8,7 @@
 #import "UIApplication+OpenURL.h"
 #import <SafariServices/SafariServices.h>
 #import "HSYToolsMacro.h"
+#import "UIApplication+AppDelegates.h"
 
 @implementation UIApplication (OpenURL)
 
@@ -15,8 +16,9 @@
 {
     BOOL open = [[UIApplication sharedApplication] canOpenURL:url];
     if (open) {
-//        NSString *urlMethod = @{@(YES) : NSStringFromSelector(@selector(openURL:options:completionHandler:)), @(NO) : NSStringFromSelector(@selector(openURL:))}[@(VERSION_GTR_IOS10)];
-//        HSYCOCOAKIT_IGNORED_SUPPRESS_PERFORM_SELECTOR_LEAK_WARNING([[UIApplication sharedApplication] performSelector:NSSelectorFromString(urlMethod) withObject:url withObject:nil]);
+        BOOL isOver10iOSSystems = (IPHONE_SYSTEM_VERSION > 10.0);
+        NSString *urlMethod = @{@(YES) : NSStringFromSelector(@selector(openURL:options:completionHandler:)), @(NO) : NSStringFromSelector(@selector(openURL:))}[@(isOver10iOSSystems)];
+        HSYCOCOAKIT_IGNORED_SUPPRESS_PERFORM_SELECTOR_LEAK_WARNING([[UIApplication sharedApplication] performSelector:NSSelectorFromString(urlMethod) withObject:url withObject:nil]);
     }
     return open;
 }
@@ -30,7 +32,7 @@
 {
     if (@available(iOS 9.0, *)) {
         SFSafariViewController *safariViewController = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
-//        [[UIApplication appDelegate].window.rootViewController presentViewController:safariViewController animated:YES completion:^{}];
+        [[UIApplication hsy_appDelegate].window.rootViewController presentViewController:safariViewController animated:YES completion:^{}];
     }
 }
 

@@ -31,103 +31,103 @@
 
 #pragma mark - Get Property
 
-- (CGPoint)hsy_origin
+- (CGPoint)origin
 {
     return self.frame.origin;
 }
 
-- (CGFloat)hsy_x
+- (CGFloat)x
 {
-    return self.hsy_origin.x;
+    return self.origin.x;
 }
 
-- (CGFloat)hsy_y
+- (CGFloat)y
 {
-    return self.hsy_origin.y;
+    return self.origin.y;
 }
 
-- (CGFloat)hsy_right
+- (CGFloat)right
 {
-    return self.hsy_x + self.hsy_width;
+    return self.x + self.width;
 }
 
-- (CGFloat)hsy_bottom
+- (CGFloat)bottom
 {
-    return self.hsy_y + self.hsy_height;
+    return self.y + self.height;
 }
 
-- (CGSize)hsy_size
+- (CGSize)size
 {
     return self.frame.size;
 }
 
-- (CGFloat)hsy_height
+- (CGFloat)height
 {
-    return self.hsy_size.height;
+    return self.size.height;
 }
 
-- (CGFloat)hsy_width
+- (CGFloat)width
 {
-    return self.hsy_size.width;
+    return self.size.width;
 }
 
-- (CGFloat)hsy_mid_x
+- (CGFloat)mid_x
 {
-    return (self.hsy_x + (self.hsy_width / 2));
+    return (self.x + (self.width / 2));
 }
 
-- (CGFloat)hsy_mid_y
+- (CGFloat)mid_y
 {
-    return (self.hsy_y + (self.hsy_height / 2));
+    return (self.y + (self.height / 2));
 }
 
-- (CGSize)hsy_ceilSize
+- (CGFloat)ceilWidth
 {
-    return CGSizeMake(self.hsy_ceilWidth, self.hsy_ceilHeight);
+    return ceil(self.width);
 }
 
-- (CGFloat)hsy_ceilWidth
+- (CGFloat)ceilHeight
 {
-    return ceil(self.hsy_width);
+    return ceil(self.height);
 }
 
-- (CGFloat)hsy_ceilHeight
+- (CGSize)ceilSize
 {
-    return ceil(self.hsy_height);
-}
+    return CGSizeMake(self.ceilWidth, self.ceilHeight);
+} 
 
 #pragma mark - Set Origin
 
-- (void)hsy_setOrigin:(CGPoint)origin
+- (void)setOrigin:(CGPoint)origin
 {
-    self.frame = (CGRect){origin, self.hsy_size};
+    self.frame = (CGRect){origin, self.size};
 }
 
-- (void)hsy_setX:(CGFloat)x
+- (void)setX:(CGFloat)x
 {
-    [self hsy_setOrigin:CGPointMake(x, self.hsy_y)];
+    [self setOrigin:CGPointMake(x, self.y)];
 }
 
-- (void)hsy_setY:(CGFloat)y
+- (void)setY:(CGFloat)y
 {
-    [self hsy_setOrigin:CGPointMake(self.hsy_x, y)];
+    [self setOrigin:CGPointMake(self.x, y)];
 }
 
 #pragma mark - Set Size
 
-- (void)hsy_setSize:(CGSize)size
+- (void)setSize:(CGSize)size
 {
-    self.frame = (CGRect){self.hsy_origin, size};
+    self.frame = (CGRect){self.origin, size};
 }
 
-- (void)hsy_setWidth:(CGFloat)width
+- (void)setWidth:(CGFloat)width
 {
-    [self hsy_setSize:CGSizeMake(width, self.hsy_height)];
+    [self setSize:CGSizeMake(width, self.height)];
 }
 
-- (void)hsy_setHeight:(CGFloat)height
+- (void)setHeight:(CGFloat)height
 {
-    [self hsy_setSize:CGSizeMake(self.hsy_width, height)];
+    [self setSize:CGSizeMake(self.width, height)];
 }
 
 @end

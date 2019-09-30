@@ -133,7 +133,7 @@
 
 #pragma mark - Format Moneys
 
-- (NSString *)formattingByMoneys
+- (NSString *)hsy_formattingByMoneys
 {
     NSString *result = self.copy;
     if (!result.isPureNumber) {

@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HSYToolsMacro.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,12 +35,12 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param url 完整的url地址
  */
-+ (void)hsy_openSafariServer:(NSString *)url NS_AVAILABLE_IOS(9_0);
++ (void)hsy_openSafariServer:(NSString *)url HSY_AVAILABLE_IOS_9;
 
 /**
  >= iOS8系统下，通过完整的url打开系统设置
  */
-+ (void)hsy_openSystemSetting NS_AVAILABLE_IOS(8_0);
++ (void)hsy_openSystemSetting HSY_AVAILABLE_IOS_8; 
 
 @end
 

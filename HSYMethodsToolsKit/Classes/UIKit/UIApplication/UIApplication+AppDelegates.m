@@ -6,6 +6,7 @@
 //
 
 #import "UIApplication+AppDelegates.h"
+#import "HSYToolsMacro.h"
 
 @implementation UIApplication (AppDelegates)
 
@@ -22,9 +23,9 @@
 + (CGFloat)hsy_statusBarHeight
 {
     CGFloat height = [UIApplication hsy_iPhoneStatusBarSize].height;
-//    if (height == 0.0f) {
-//        height = (IPHONE_HEIGHT == ((CGFloat)kHSYCocoaKitLaunchScreenSize_5_8_Inch) ? 44.0f : 20.0f);
-//    }
+    if (!height) {
+        height = (IS_iPhoneX ? 44.0f : 20.0f);
+    }
     return height;
 }
 

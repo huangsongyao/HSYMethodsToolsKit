@@ -10,7 +10,7 @@
 
 @implementation NSString (StringSize)
 
-+ (CGSize)boundingRectWithSize:(CGSize)maxSize font:(UIFont *)font forString:(NSString *)string
++ (CGSize)hsy_boundingRectWithSize:(CGSize)maxSize font:(UIFont *)font forString:(NSString *)string
 {
     if (!string.length || !font) {
         return CGSizeZero;
@@ -26,19 +26,19 @@
                                 context:nil].size;
 }
 
-- (CGSize)boundingRectWithSize:(CGSize)maxSize font:(UIFont *)font
+- (CGSize)hsy_boundingRectWithSize:(CGSize)maxSize font:(UIFont *)font
 {
-    return [NSString boundingRectWithSize:maxSize font:font forString:self];
+    return [NSString hsy_boundingRectWithSize:maxSize font:font forString:self];
 }
 
-- (CGSize)boundingRectWithWidths:(CGFloat)widths font:(UIFont *)font
+- (CGSize)hsy_boundingRectWithWidths:(CGFloat)widths font:(UIFont *)font
 {
-    return [NSString boundingRectWithSize:CGSizeMake(widths, 0.0f) font:font forString:self];
+    return [NSString hsy_boundingRectWithSize:CGSizeMake(widths, 0.0f) font:font forString:self];
 }
 
-- (CGSize)boundingRectWithHeights:(CGFloat)heights font:(UIFont *)font
+- (CGSize)hsy_boundingRectWithHeights:(CGFloat)heights font:(UIFont *)font
 {
-    return [NSString boundingRectWithSize:CGSizeMake(0.0f, heights) font:font forString:self];
+    return [NSString hsy_boundingRectWithSize:CGSizeMake(0.0f, heights) font:font forString:self];
 }
 
 @end
