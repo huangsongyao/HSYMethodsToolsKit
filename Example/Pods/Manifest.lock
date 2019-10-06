@@ -5,7 +5,7 @@ PODS:
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
   - HSYMacroKit (0.1.2)
-  - HSYMethodsToolsKit (0.1.1):
+  - HSYMethodsToolsKit (0.1.2):
     - HSYMacroKit
     - JSONModel
     - ReactiveObjC
@@ -42,7 +42,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   HSYMacroKit: 4cc5705220161ae193c1dd2fec2a8e49b149d1c7
-  HSYMethodsToolsKit: c67df808bc796a5de4549f5b9e421afeceaf453b
+  HSYMethodsToolsKit: 447e03ab1d1424fb3e8d86b725bca4bedd057317
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 609192dcf3898c910a2848032372ead951e66364
