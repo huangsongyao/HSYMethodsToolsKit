@@ -12,9 +12,9 @@ PODS:
     - SDWebImage
   - JSONModel (1.8.0)
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.2.0):
-    - SDWebImage/Core (= 5.2.0)
-  - SDWebImage/Core (5.2.0)
+  - SDWebImage (5.2.2):
+    - SDWebImage/Core (= 5.2.2)
+  - SDWebImage/Core (5.2.2)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -45,7 +45,7 @@ SPEC CHECKSUMS:
   HSYMethodsToolsKit: 447e03ab1d1424fb3e8d86b725bca4bedd057317
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: 609192dcf3898c910a2848032372ead951e66364
+  SDWebImage: 5fcdb02cc35e05fc35791ec514b191d27189f872
 
 PODFILE CHECKSUM: aa50149824d3158930d1a070e03977c6ce4c35bb
 

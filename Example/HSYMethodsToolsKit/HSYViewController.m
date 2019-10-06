@@ -34,11 +34,11 @@
 {
     [super viewDidLoad];
     UILabel *label = [[UILabel alloc] init];
-    [label hsy_alineSuggestString:@"为了能够实时的监听textField" maxWidths:300 font:[UIFont systemFontOfSize:15] textAlignment:NSTextAlignmentLeft];
-    [self.view addSubview:label];
-    label.x = 10.0f;
-    label.y = 100.0f;
-    label.backgroundColor = UIColor.greenColor;
+//    [label hsy_alineSuggestString:@"为了能够实时的监听textField" maxWidths:300 font:[UIFont systemFontOfSize:15] textAlignment:NSTextAlignmentLeft];
+//    [self.view addSubview:label];
+//    label.x = 10.0f;
+//    label.y = 100.0f;
+//    label.backgroundColor = UIColor.greenColor;
     testJsonModel *ts = [NSObject hsy_toJSONModel:@{@"title" : @"123", @"name" : @"wocao"} forModelClasses:[testJsonModel class]];
     NSLog(@"%@", ts);
 	// Do any additional setup after loading the view, typically from a nib.
