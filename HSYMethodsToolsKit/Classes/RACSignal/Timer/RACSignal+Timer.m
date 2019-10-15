@@ -29,4 +29,12 @@
     return disposable;
 }
 
++ (RACDisposable *)hsy_timerSignal:(NSTimeInterval)maxIntervals
+                     subscribeNext:(BOOL(^)(NSDate *date, NSTimeInterval interval))next
+{
+    return [self.class hsy_timerSignal:1.0f
+                     timerMaxIntervals:maxIntervals
+                         subscribeNext:next];
+}
+
 @end

@@ -7,10 +7,11 @@
 //
 
 #import "HSYViewController.h"
-#import "UILabel+SuggestSize.h" 
+#import "UILabel+SuggestSize.h"
 #import "UIView+Frame.h"
 #import <JSONModel/JSONModel.h>
 #import "NSObject+JSONModel.h"
+#import "UIAlertController+RACSignal.h"
 
 @interface testJsonModel : JSONModel
 
@@ -33,7 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UILabel *label = [[UILabel alloc] init];
+//    UILabel *label = [[UILabel alloc] init];
 //    [label hsy_alineSuggestString:@"为了能够实时的监听textField" maxWidths:300 font:[UIFont systemFontOfSize:15] textAlignment:NSTextAlignmentLeft];
 //    [self.view addSubview:label];
 //    label.x = 10.0f;
@@ -41,6 +42,12 @@
 //    label.backgroundColor = UIColor.greenColor;
     testJsonModel *ts = [NSObject hsy_toJSONModel:@{@"title" : @"123", @"name" : @"wocao"} forModelClasses:[testJsonModel class]];
     NSLog(@"%@", ts);
+//    [[UIAlertController hsy_showAlertController:self title:@"title" message:@"message" alertActionTitles:@[@"sure"]] subscribeNext:^(UIAlertAction * _Nullable x) {
+//        NSLog(@"%@", x.hsy_actionIndex);
+//    }];
+//    [[UIAlertController hsy_showSheetController:self title:@"title" message:@"message" sheetActionTitles:@[@"sure"]] subscribeNext:^(UIAlertAction * _Nullable x) {
+//        NSLog(@"%@", x.hsy_actionIndex);
+//    }];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

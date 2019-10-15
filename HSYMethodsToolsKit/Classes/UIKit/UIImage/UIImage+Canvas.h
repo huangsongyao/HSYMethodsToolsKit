@@ -44,6 +44,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (UIImage *)hsy_combinationOriginImage:(UIColor *)backgroundColor NS_AVAILABLE_IOS(8_0);
 
+/**
+ CIImage转UIImage
+
+ @param size 绘制的UIImage的原始size
+ @param ciImage CIImage
+ @return 绘制新的UIImage
+ */
++ (UIImage *)hsy_imageWithQRCodeSize:(CGFloat)size withCIImage:(CIImage *)ciImage;
+
 @end
 
 NS_ASSUME_NONNULL_END

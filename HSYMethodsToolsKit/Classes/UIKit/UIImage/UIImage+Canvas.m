@@ -106,4 +106,30 @@ static UIImage *createImageWithColor(UIColor *color, CGRect rect)
     return combinationImage;
 }
 
+#pragma mark - Draws
+
++ (UIImage *)hsy_imageWithQRCodeSize:(CGFloat)size withCIImage:(CIImage *)ciImage
+{
+    CGRect extent = CGRectIntegral(ciImage.extent);
+    CGFloat scale = MIN(size/CGRectGetWidth(extent), size/CGRectGetHeight(extent));
+    size_t width = CGRectGetWidth(extent) * scale;
+    size_t height = CGRectGetHeight(extent) * scale;
+    CGColorSpaceRef spaceRef = CGColorSpaceCreateDeviceGray();
+    
+    CGContextRef contextRef = CGBitmapContextCreate(nil, width, height, 8, 0, spaceRef, (CGBitmapInfo)kCGImageAlphaNone);
+    CIContext *content = [CIContext contextWithOptions:nil];
+    CGImageRef bitmapRef = [content createCGImage:ciImage fromRect:extent];
+    CGContextSetInterpolationQuality(contextRef, kCGInterpolationNone);
+    CGContextScaleCTM(contextRef, scale, scale);
+    CGContextDrawImage(contextRef, extent, bitmapRef);
+    
+    CGImageRef resultImageRef = CGBitmapContextCreateImage(contextRef);
+    CGContextRelease(contextRef);
+    CGImageRelease(bitmapRef);
+    
+    UIImage *image = [UIImage imageWithCGImage:resultImageRef];
+    return image;
+}
+
+
 @end

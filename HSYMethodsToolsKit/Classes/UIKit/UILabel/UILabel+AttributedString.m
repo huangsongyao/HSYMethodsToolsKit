@@ -13,7 +13,9 @@
                                                   attributedString:(NSString *)attributedString
                                                              range:(NSRange)range
 {
-    if (!attributedDictionary || !attributedString || range.length == 0) {
+    if (!attributedDictionary ||
+        !attributedString ||
+        range.length == 0) {
         return nil;
     }
     NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc] initWithString:attributedString];
