@@ -1,5 +1,5 @@
 //
-//  UIView+Rotations.h
+//  UIView+Rotated.h
 //  HSYMethodsToolsKit
 //
 //  Created by anmin on 2019/10/21.
@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 FOUNDATION_EXPORT NSString *const kHSYMethodsToolsViewRotationsForKey;
 typedef void(^HSYRotationsCompleted)(CAAnimation *animation);
 
-@interface UIView (Rotations) <CAAnimationDelegate>
+@interface UIView (Rotated) <CAAnimationDelegate>
 
 @property (nonatomic, copy) HSYRotationsCompleted rotationCompleted;
 
@@ -28,21 +28,21 @@ typedef void(^HSYRotationsCompleted)(CAAnimation *animation);
 
 /**
  开启一个绕圆心的旋转动画，过程为绕圆心旋转，次数为无限次，每次动画时间为1s，动画结束后由completed返回动画结束
-
+ 
  @param completed 动画结束后的回调
  */
 - (void)hsy_rotateds:(HSYRotationsCompleted)completed;
 
 /**
  开启一个绕圆心的旋转动画，过程为绕圆心旋转，次数为repeat，每次动画时间为1s
-
+ 
  @param repeat 完整动画的次数
  */
 - (void)hsy_rotatedsRepeat:(NSInteger)repeat;
 
 /**
-  开启一个绕圆心的旋转动画，过程为绕圆心旋转，次数为repeat，每次动画时间为1s，动画结束后由completed返回动画结束
-
+ 开启一个绕圆心的旋转动画，过程为绕圆心旋转，次数为repeat，每次动画时间为1s，动画结束后由completed返回动画结束
+ 
  @param repeat 完整动画的次数
  @param completed 动画结束后的回调
  */
@@ -50,7 +50,7 @@ typedef void(^HSYRotationsCompleted)(CAAnimation *animation);
 
 /**
  开启一个绕圆心的旋转动画，过程为绕圆心旋转，次数为无限次，每次动画时间为duration秒，动画结束后由completed返回动画结束
-
+ 
  @param duration 绕圆心转动单次动画的时间
  @param completed 动画结束后的回调
  */
@@ -58,7 +58,7 @@ typedef void(^HSYRotationsCompleted)(CAAnimation *animation);
 
 /**
  开启一个绕圆心的旋转动画，过程为绕圆心旋转，次数为无限次，每次动画时间为duration秒，动画结束后由completed返回动画结束，添加至layer层的动画key为key
-
+ 
  @param duration 绕圆心转动单次动画的时间
  @param key 添加至layer层的动画key
  @param completed 动画结束后的回调
@@ -67,7 +67,7 @@ typedef void(^HSYRotationsCompleted)(CAAnimation *animation);
 
 /**
  开启一个绕圆心的旋转动画，过程为绕圆心旋转，次数为repeat次，每次动画时间为duration秒，动画结束后由completed返回动画结束，添加至layer层的动画key为key
-
+ 
  @param duration 绕圆心转动单次动画的时间
  @param repeat 完整动画的次数
  @param key 添加至layer层的动画key

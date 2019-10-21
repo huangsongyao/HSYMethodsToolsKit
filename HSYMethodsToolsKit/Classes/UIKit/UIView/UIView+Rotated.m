@@ -1,17 +1,19 @@
 //
-//  UIView+Rotations.m
+//  UIView+Rotated.m
 //  HSYMethodsToolsKit
 //
 //  Created by anmin on 2019/10/21.
 //
 
-#import "UIView+Rotations.h"
+#import "UIView+Rotated.h"
 #import "NSObject+Property.h" 
 
 NSString *const kHSYMethodsToolsViewRotationsForKey       = @"HSYMethodsToolsViewRotationsForKey";
 static NSString *kHSYMethodsToolsRotationsCompletedForKey      = @"HSYMethodsToolsRotationsCompletedForKey";
 
-@implementation UIView (Rotations)
+@implementation UIView (Rotated)
+
+#pragma mark - Runtime
 
 - (HSYRotationsCompleted)rotationCompleted
 {
@@ -30,6 +32,24 @@ static NSString *kHSYMethodsToolsRotationsCompletedForKey      = @"HSYMethodsToo
 - (void)hsy_stopRotated
 {
     [self.layer removeAnimationForKey:kHSYMethodsToolsViewRotationsForKey];
+}
+
+- (void)hsy_rotateds:(NSTimeInterval)duration repeatCount:(NSInteger)repeat forKey:(NSString *)key completed:(HSYRotationsCompleted)completed
+{
+    if ([self.layer.animationKeys containsObject:kHSYMethodsToolsViewRotationsForKey]) {
+        [self hsy_stopRotated];
+    }
+    if ([self.layer.animationKeys containsObject:key]) {
+        [self.layer removeAnimationForKey:key];
+    }
+    CABasicAnimation *rotateds = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotateds.delegate = self;
+    rotateds.toValue = @(M_PI * 2.0);
+    rotateds.duration = duration;
+    rotateds.repeatCount = repeat;
+    
+    self.rotationCompleted = completed;
+    [self.layer addAnimation:rotateds forKey:key];
 }
 
 - (void)hsy_rotateds
@@ -62,24 +82,6 @@ static NSString *kHSYMethodsToolsRotationsCompletedForKey      = @"HSYMethodsToo
     [self hsy_rotateds:duration repeatCount:HUGE_VALF forKey:key completed:completed];
 }
 
-- (void)hsy_rotateds:(NSTimeInterval)duration repeatCount:(NSInteger)repeat forKey:(NSString *)key completed:(HSYRotationsCompleted)completed
-{
-    if ([self.layer.animationKeys containsObject:kHSYMethodsToolsViewRotationsForKey]) {
-        [self.layer removeAnimationForKey:kHSYMethodsToolsViewRotationsForKey];
-    }
-    if ([self.layer.animationKeys containsObject:key]) {
-        [self.layer removeAnimationForKey:key];
-    }
-    CABasicAnimation *rotateds = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotateds.delegate = self;
-    rotateds.toValue = @(M_PI * 2.0);
-    rotateds.duration = duration;
-    rotateds.repeatCount = repeat; 
-    
-    self.rotationCompleted = completed;
-    [self.layer addAnimation:rotateds forKey:key];
-}
-
 #pragma mark - CAAnimationDelegate
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
@@ -88,6 +90,5 @@ static NSString *kHSYMethodsToolsRotationsCompletedForKey      = @"HSYMethodsToo
         self.rotationCompleted(anim);
     }
 }
-
 
 @end

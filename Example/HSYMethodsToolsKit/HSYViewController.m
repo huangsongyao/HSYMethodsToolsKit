@@ -13,6 +13,7 @@
 #import "NSObject+JSONModel.h"
 #import "UIAlertController+RACSignal.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "UIView+Rotated.h"
 
 @interface testJsonModel : JSONModel
 
@@ -54,7 +55,7 @@
     view.backgroundColor = UIColor.grayColor;
     [self.view addSubview:view];
     [[RACScheduler mainThreadScheduler] afterDelay:3 schedule:^{
-//        [view ]
+        [view hsy_rotateds];
     }];
 	// Do any additional setup after loading the view, typically from a nib.
 }
