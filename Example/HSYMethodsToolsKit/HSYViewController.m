@@ -12,6 +12,7 @@
 #import <JSONModel/JSONModel.h>
 #import "NSObject+JSONModel.h"
 #import "UIAlertController+RACSignal.h"
+#import <ReactiveObjC/ReactiveObjC.h>
 
 @interface testJsonModel : JSONModel
 
@@ -48,6 +49,13 @@
 //    [[UIAlertController hsy_showSheetController:self title:@"title" message:@"message" sheetActionTitles:@[@"sure"]] subscribeNext:^(UIAlertAction * _Nullable x) {
 //        NSLog(@"%@", x.hsy_actionIndex);
 //    }];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    view.backgroundColor = UIColor.grayColor;
+    [self.view addSubview:view];
+    [[RACScheduler mainThreadScheduler] afterDelay:3 schedule:^{
+//        [view ]
+    }];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
