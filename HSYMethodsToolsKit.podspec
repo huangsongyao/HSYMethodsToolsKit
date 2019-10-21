@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HSYMethodsToolsKit'
-  s.version          = '0.1.6'
+  s.version          = '0.1.5'
   s.summary          = 'A short description of HSYMethodsToolsKit.'
 
 # This description is used to generate tags and improve search results.
