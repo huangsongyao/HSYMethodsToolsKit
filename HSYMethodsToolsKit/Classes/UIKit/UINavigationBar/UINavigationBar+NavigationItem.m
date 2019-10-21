@@ -12,8 +12,6 @@
 #import "NSString+StringSize.h"
 #import <HSYMacroKit/HSYToolsMacro.h>
 
-CGFloat const kXQCCustomNavigationBarButtonForSize                          = 44.0f;
-
 @implementation UINavigationBar (NavigationItem)
 
 + (NSArray<UIBarButtonItem *> *)hsy_imageNavigationItems:(NSArray<NSDictionary<NSNumber *, NSDictionary *> *> *)paramters leftEdgeInsets:(CGFloat)left subscribeNext:(void(^)(UIButton *button, NSInteger tag))next
@@ -61,7 +59,7 @@ CGFloat const kXQCCustomNavigationBarButtonForSize                          = 44
 + (UIButton *)hsy_buttonWithEdgeInsets:(CGFloat)left forButtonTag:(NSInteger)tag clickedOnAction:(void (^)(UIButton *button))action
 {
     UIButton *barButton = [UIButton hsy_buttonWithAction:action];
-    barButton.size = CGSizeMake(kXQCCustomNavigationBarButtonForSize, kXQCCustomNavigationBarButtonForSize); 
+    barButton.size = CGSizeMake(kHSYCustomNavigationBarButtonForSize, kHSYCustomNavigationBarButtonForSize); 
     barButton.contentEdgeInsets = UIEdgeInsetsMake(0.0f, left, 0.0f, 0.0f);
     barButton.tag = tag;
     

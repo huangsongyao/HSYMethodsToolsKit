@@ -46,6 +46,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (CGRect)hsy_iPhoneScreenBounds;
 
+/**
+ 获取UINavigationBar的视觉高度
+
+ @return UINavigationBar的视觉高度
+ */
++ (CGFloat)hsy_navigationBarHeights;
 
 @end
 

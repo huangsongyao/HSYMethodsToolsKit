@@ -9,6 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+CGFloat const kHSYCustomNavigationBarButtonForSize                          = 44.0f;
+
 @interface UINavigationBar (NavigationItem)
 
 /**

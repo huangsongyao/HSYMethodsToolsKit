@@ -39,5 +39,9 @@
     return [UIScreen mainScreen].bounds;
 }
 
++ (CGFloat)hsy_navigationBarHeights
+{
+    return (HSY_IS_iPhoneX ? 88.0f : 64.0f);
+}
 
 @end
