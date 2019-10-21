@@ -45,6 +45,7 @@
 #import "UILabel+AttributedString.h"
 #import "UILabel+SuggestSize.h"
 #import "UINavigationBar+Background.h"
+#import "UINavigationBar+NavigationItem.h"
 #import "UINavigationController+Finder.h"
 #import "UIResponder+Orientation.h"
 #import "UIScrollView+Pages.h"

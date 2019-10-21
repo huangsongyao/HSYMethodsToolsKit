@@ -17,15 +17,15 @@ static NSString *kHSYMethodsToolsRegularCharactersForKey      = @"HSYMethodsTool
 
 + (instancetype)hsy_textViewWithChanged:(void(^)(NSString *text))changedBlock
 {
-    UITextView *textView = [[UITextField alloc] init];
+    UITextView *textView = [[UITextView alloc] init];
     [[textView.rac_textSignal deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:changedBlock];
     return textView;
 }
 
 + (instancetype)hsy_textViewWithRegular:(NSString *)regular
 {
-    UITextView *textView = [[UITextField alloc] init];
-    textView.delegate = textField;
+    UITextView *textView = [[UITextView alloc] init];
+    textView.delegate = textView;
     textView.hsy_regular = regular;
     return textView;
 }
@@ -34,13 +34,13 @@ static NSString *kHSYMethodsToolsRegularCharactersForKey      = @"HSYMethodsTool
 
 - (NSString *)hsy_regular
 {
-    return [self hsy_getPropertyForKey:&kHSYMethodsToolsRegularCharactersForKey];
+    return [self hsy_getPropertyForKey:kHSYMethodsToolsRegularCharactersForKey];
 }
 
 - (void)setHsy_regular:(NSString *)hsy_regular
 {
     [self hsy_setProperty:hsy_regular
-                   forKey:&kHSYMethodsToolsRegularCharactersForKey
+                   forKey:kHSYMethodsToolsRegularCharactersForKey
     objcAssociationPolicy:kHSYMethodsToolsKitObjcAssociationPolicyNonatomicCopy];
 }
 

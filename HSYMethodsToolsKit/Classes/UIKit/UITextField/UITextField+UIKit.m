@@ -34,13 +34,13 @@ static NSString *kHSYMethodsToolsRegularShouldChangeCharactersForKey      = @"HS
 
 - (NSString *)hsy_regular
 {
-    return [self hsy_getPropertyForKey:&kHSYMethodsToolsRegularShouldChangeCharactersForKey];
+    return [self hsy_getPropertyForKey:kHSYMethodsToolsRegularShouldChangeCharactersForKey];
 }
 
 - (void)setHsy_regular:(NSString *)hsy_regular
 {
     [self hsy_setProperty:hsy_regular
-                   forKey:&kHSYMethodsToolsRegularShouldChangeCharactersForKey
+                   forKey:kHSYMethodsToolsRegularShouldChangeCharactersForKey
     objcAssociationPolicy:kHSYMethodsToolsKitObjcAssociationPolicyNonatomicCopy];
 }
 

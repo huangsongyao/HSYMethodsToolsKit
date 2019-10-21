@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 FOUNDATION_EXPORT NSString *const kHSYMethodsToolsViewRotationsForKey;
 typedef void(^HSYRotationsCompleted)(CAAnimation *animation);
 
-@interface UIView (Rotations)
+@interface UIView (Rotations) <CAAnimationDelegate>
 
 @property (nonatomic, copy) HSYRotationsCompleted rotationCompleted;
 

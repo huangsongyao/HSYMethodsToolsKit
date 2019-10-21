@@ -15,13 +15,13 @@ static NSString *kHSYMethodsToolsRotationsCompletedForKey      = @"HSYMethodsToo
 
 - (HSYRotationsCompleted)rotationCompleted
 {
-    return [self hsy_getPropertyForKey:&kHSYMethodsToolsRotationsCompletedForKey];
+    return [self hsy_getPropertyForKey:kHSYMethodsToolsRotationsCompletedForKey];
 }
 
 - (void)setRotationCompleted:(HSYRotationsCompleted)rotationCompleted
 {
     [self hsy_setProperty:rotationCompleted
-                   forKey:&kHSYMethodsToolsRotationsCompletedForKey
+                   forKey:kHSYMethodsToolsRotationsCompletedForKey
     objcAssociationPolicy:kHSYMethodsToolsKitObjcAssociationPolicyNonatomicCopy];
 }
 
@@ -74,7 +74,7 @@ static NSString *kHSYMethodsToolsRotationsCompletedForKey      = @"HSYMethodsToo
     rotateds.delegate = self;
     rotateds.toValue = @(M_PI * 2.0);
     rotateds.duration = duration;
-    rotateds.repeatCount = count;
+    rotateds.repeatCount = repeat; 
     
     self.rotationCompleted = completed;
     [self.layer addAnimation:rotateds forKey:key];
