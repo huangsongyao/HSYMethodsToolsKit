@@ -21,14 +21,14 @@
 
 + (NSBundle *)hsy_resourceBundle
 {
-    NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"HSYBaseViewController")];
-    NSString *bundleName = bundle.infoDictionary[@"CFBundleName"];
-    NSURL *bundleURL = [bundle URLForResource:bundleName withExtension:@"bundle"];
-    if (!bundleURL) {
-        bundleName = @"HSYCocoaKit";
-        bundleURL = [bundle URLForResource:bundleName withExtension:@"bundle"];
-    }
-    NSBundle *resourceBundle = [NSBundle bundleWithURL:bundleURL];
+    //通过mainBundle获取到target名称，一般来说，cocoapods工程的target会带有"_Example"后缀，需要过滤掉这个后缀
+    NSString *bundleName = [[NSBundle mainBundle].infoDictionary[@"CFBundleName"] componentsSeparatedByString:@"_Example"].firstObject;
+    //cocoapods的库的本地路径，"Frameworks" 是.app包中的固定名称的文件夹，mainBundle的绝对路径需要拼接它，最后加上"framework"后缀类型
+    NSURL *associateBundleURL = [[[[NSBundle mainBundle] URLForResource:@"Frameworks" withExtension:nil] URLByAppendingPathComponent:bundleName] URLByAppendingPathExtension:@"framework"];
+    NSBundle *associateBundle = [NSBundle bundleWithURL:associateBundleURL];
+    associateBundleURL = [associateBundle URLForResource:bundleName withExtension:@"bundle"];
+    NSBundle *resourceBundle = [NSBundle bundleWithURL:associateBundleURL];
+    
     return resourceBundle;
 }
 
