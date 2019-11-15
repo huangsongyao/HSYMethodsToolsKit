@@ -14,6 +14,7 @@
 #import "UIAlertController+RACSignal.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "UIView+Rotated.h"
+#import "UIButton+UIKit.h"
 
 @interface testJsonModel : JSONModel
 
@@ -57,6 +58,17 @@
     [[RACScheduler mainThreadScheduler] afterDelay:3 schedule:^{
         [view hsy_rotateds];
     }];
+    
+    UIButton *button = [UIButton hsy_buttonWithAction:^(UIButton * _Nonnull button) {
+        
+    }];
+    [button hsy_setImage:[UIImage imageNamed:@"open_light_icon"]];
+    [button hsy_setTitle:@"测试一下"];
+    [button hsy_setTitleColor:UIColor.yellowColor];
+    button.backgroundColor = UIColor.redColor;
+    button.origin = CGPointMake(100, 300);
+    [button hsy_setImagePosition:kHSYMethodsToolsButtonImagePositionRight forSpacing:10.0f];
+    [self.view addSubview:button];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
