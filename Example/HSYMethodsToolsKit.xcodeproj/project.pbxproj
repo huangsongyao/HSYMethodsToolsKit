@@ -248,6 +248,9 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "317398895@qq.com";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = MXEAV3WBEM;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -548,6 +551,7 @@
 			baseConfigurationReference = 7924A25515A7373BC05072BB /* Pods-HSYMethodsToolsKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MXEAV3WBEM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HSYMethodsToolsKit/HSYMethodsToolsKit-Prefix.pch";
 				INFOPLIST_FILE = "HSYMethodsToolsKit/HSYMethodsToolsKit-Info.plist";
@@ -564,6 +568,7 @@
 			baseConfigurationReference = C069C40ADDB2FB678E4E1748 /* Pods-HSYMethodsToolsKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MXEAV3WBEM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HSYMethodsToolsKit/HSYMethodsToolsKit-Prefix.pch";
 				INFOPLIST_FILE = "HSYMethodsToolsKit/HSYMethodsToolsKit-Info.plist";

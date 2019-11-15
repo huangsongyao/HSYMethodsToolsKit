@@ -19,7 +19,22 @@
     return image;
 }
 
++ (UIImage *)hsy_imageForBundle:(NSString *)imageName forBundleName:(nullable NSString *)bundleName
+{
+    NSBundle *resourceBundle = [NSBundle hsy_resourceBundle:bundleName];
+    UIImage *image = [UIImage imageNamed:imageName
+                                inBundle:resourceBundle
+           compatibleWithTraitCollection:nil];
+    
+    return image;
+}
+
 + (NSBundle *)hsy_resourceBundle
+{
+    return [NSBundle hsy_resourceBundle:nil];
+}
+
++ (NSBundle *)hsy_resourceBundle:(nullable NSString *)thisBundleName
 {
     //通过mainBundle获取到target名称，一般来说，cocoapods工程的target会带有"_Example"后缀，需要过滤掉这个后缀
     NSString *bundleName = [[NSBundle mainBundle].infoDictionary[@"CFBundleName"] componentsSeparatedByString:@"_Example"].firstObject;
@@ -27,6 +42,9 @@
     NSURL *associateBundleURL = [[[[NSBundle mainBundle] URLForResource:@"Frameworks" withExtension:nil] URLByAppendingPathComponent:bundleName] URLByAppendingPathExtension:@"framework"];
     NSBundle *associateBundle = [NSBundle bundleWithURL:associateBundleURL];
     associateBundleURL = [associateBundle URLForResource:bundleName withExtension:@"bundle"];
+    if (thisBundleName.length) {
+        associateBundleURL = [associateBundleURL URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.bundle", thisBundleName]];
+    }
     NSBundle *resourceBundle = [NSBundle bundleWithURL:associateBundleURL];
     
     return resourceBundle;
