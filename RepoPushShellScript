@@ -82,7 +82,7 @@ git push --tags
 #执行commit和push操作，将update之后的更新内容提交至git远端仓库
 git add .
 git commit -m "commit -> $hsyCocoapodsSDK" 
-git pull origin master --allow-unrelated-histories 
+git pull origin master #--allow-unrelated-histories 
 #下拉成功后才能提交
 if [[ $? -eq 0 ]]; then
 	git push origin master
