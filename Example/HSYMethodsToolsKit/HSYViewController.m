@@ -15,6 +15,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "UIView+Rotated.h"
 #import "UIButton+UIKit.h"
+#import "HSYBViewController.h"
 
 @interface testJsonModel : JSONModel
 
@@ -59,8 +60,12 @@
         [view hsy_rotateds];
     }];
     
+    @weakify(self);
     UIButton *button = [UIButton hsy_buttonWithAction:^(UIButton * _Nonnull button) {
-        
+        @strongify(self);
+        HSYBViewController *vc = [[HSYBViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:nav animated:YES completion:nil];
     }];
     [button hsy_setImage:[UIImage imageNamed:@"open_light_icon"]];
     [button hsy_setTitle:@"测试一下"];
@@ -69,6 +74,8 @@
     button.origin = CGPointMake(100, 300);
     [button hsy_setImagePosition:kHSYMethodsToolsButtonImagePositionRight forSpacing:10.0f];
     [self.view addSubview:button];
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

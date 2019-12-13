@@ -78,6 +78,19 @@ typedef NS_ENUM(NSUInteger, kHSYCocoaKitScrollDirection) {
  */
 - (kHSYCocoaKitScrollDirection)hsy_scrollVerticalDirection;
 
+/**
+ 当前的翻页视图
+
+ @return 返回self.hsy_currentPage对应的当前翻页视图
+ */
+- (UIView *)hsy_topPageView;
+
+/**
+ 添加子视图，会有一个readonly数组记录
+
+ @param subview subview
+ */
+- (void)hsy_addSubview:(UIView *)subview;
 
 @end
 

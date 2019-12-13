@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		459D13B1237EA45E005FFF09 /* open_light_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 459D13B0237EA45C005FFF09 /* open_light_icon.png */; };
+		45FD881E239BA56800680811 /* HSYBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FD881D239BA56800680811 /* HSYBViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		459D13B0237EA45C005FFF09 /* open_light_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = open_light_icon.png; sourceTree = "<group>"; };
+		45FD881C239BA56800680811 /* HSYBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSYBViewController.h; sourceTree = "<group>"; };
+		45FD881D239BA56800680811 /* HSYBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSYBViewController.m; sourceTree = "<group>"; };
 		56D72C76074B63B8273461CB /* Pods_HSYMethodsToolsKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HSYMethodsToolsKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1F399F9FF04F1723133F57 /* HSYMethodsToolsKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HSYMethodsToolsKit.podspec; path = ../HSYMethodsToolsKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6003F58A195388D20070C39A /* HSYMethodsToolsKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSYMethodsToolsKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +142,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* HSYViewController.h */,
 				6003F5A6195388D20070C39A /* HSYViewController.m */,
+				45FD881C239BA56800680811 /* HSYBViewController.h */,
+				45FD881D239BA56800680811 /* HSYBViewController.m */,
 				459D13B0237EA45C005FFF09 /* open_light_icon.png */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
@@ -397,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45FD881E239BA56800680811 /* HSYBViewController.m in Sources */,
 				6003F59E195388D20070C39A /* HSYAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* HSYViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
