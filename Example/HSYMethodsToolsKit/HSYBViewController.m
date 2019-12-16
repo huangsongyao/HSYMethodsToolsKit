@@ -20,12 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = UIColor.whiteColor;
     UIScrollView *_scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    _scrollView.backgroundColor = UIColor.whiteColor;
+    _scrollView.backgroundColor = UIColor.greenColor;
     _scrollView.pagingEnabled = YES;
     _scrollView.showsHorizontalScrollIndicator = NO;
-    _scrollView.hidden = YES;
     _scrollView.bounces = NO;
     [self.view addSubview:_scrollView];
     NSArray *imgs = @[@"open_light_icon", @"open_light_icon", @"open_light_icon", @"open_light_icon", @"open_light_icon"];

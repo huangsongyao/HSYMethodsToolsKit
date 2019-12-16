@@ -16,6 +16,8 @@
 #import "UIView+Rotated.h"
 #import "UIButton+UIKit.h"
 #import "HSYBViewController.h"
+#import "UIButton+Loading.h"
+#import "UIView+Layer.h"
 
 @interface testJsonModel : JSONModel
 
@@ -31,6 +33,8 @@
 
 @interface HSYViewController ()
 
+@property (nonatomic, assign) BOOL testResult;
+
 @end
 
 @implementation HSYViewController
@@ -38,6 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.testResult = YES;
 //    UILabel *label = [[UILabel alloc] init];
 //    [label hsy_alineSuggestString:@"为了能够实时的监听textField" maxWidths:300 font:[UIFont systemFontOfSize:15] textAlignment:NSTextAlignmentLeft];
 //    [self.view addSubview:label];
@@ -62,17 +67,27 @@
     
     @weakify(self);
     UIButton *button = [UIButton hsy_buttonWithAction:^(UIButton * _Nonnull button) {
-        @strongify(self);
-        HSYBViewController *vc = [[HSYBViewController alloc] init];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        [self presentViewController:nav animated:YES completion:nil];
+        NSLog(@"button=>%@", button);
+        [button hsy_loadingButton:self.view.backgroundColor forMap:^RACSignal * _Nonnull(BOOL isAnimating) {
+            return [RACSignal hsy_signalSubscriber:^(id<RACSubscriber>  _Nonnull subscriber) {
+                @strongify(self);
+                HSYBViewController *vc = [[HSYBViewController alloc] init];
+                UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+                [self presentViewController:nav animated:YES completion:nil];
+                [RACSignal hsy_performSendSignal:subscriber forObject:RACTuplePack(@(self.testResult))];
+            } afterDelays:2.0];
+        }];
     }];
-    [button hsy_setImage:[UIImage imageNamed:@"open_light_icon"]];
+//    [button hsy_setImage:[UIImage imageNamed:@"open_light_icon"]];
     [button hsy_setTitle:@"测试一下"];
     [button hsy_setTitleColor:UIColor.yellowColor];
     button.backgroundColor = UIColor.redColor;
     button.origin = CGPointMake(100, 300);
-    [button hsy_setImagePosition:kHSYMethodsToolsButtonImagePositionRight forSpacing:10.0f];
+//    button.size = CGSizeMake(100.0f, 50.0f);
+    button.size = CGSizeMake(50.0f, 150.0f);
+    
+    [button hsy_setRoundnessCornerRadius];
+//    [button hsy_setImagePosition:kHSYMethodsToolsButtonImagePositionRight forSpacing:10.0f];
     [self.view addSubview:button];
     
     

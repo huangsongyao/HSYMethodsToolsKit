@@ -11,7 +11,7 @@
 
 static NSString *kHSYMethodsToolsPrivateSubviewsForKey = @"HSYMethodsToolsPrivateSubviewsForKey";
 
-@interface UIScrollView (Private) 
+@interface UIScrollView (Private)
 
 @property (nonatomic, strong) NSMutableArray<UIView *> *hsy_subviews;
 
@@ -21,7 +21,12 @@ static NSString *kHSYMethodsToolsPrivateSubviewsForKey = @"HSYMethodsToolsPrivat
 
 - (NSMutableArray<UIView *> *)hsy_subviews
 {
-    return [self hsy_getPropertyForKey:kHSYMethodsToolsPrivateSubviewsForKey];
+    NSMutableArray<UIView *> *thisSubviews = [self hsy_getPropertyForKey:kHSYMethodsToolsPrivateSubviewsForKey];
+    if (!thisSubviews) {
+        thisSubviews = [[NSMutableArray alloc] init];
+        [self setHsy_subviews:thisSubviews];
+    }
+    return thisSubviews;
 }
 
 - (void)setHsy_subviews:(NSMutableArray<UIView *> *)hsy_subviews

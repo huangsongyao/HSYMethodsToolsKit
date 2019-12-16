@@ -9,8 +9,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIScrollView (Pages)
-
 typedef NS_ENUM(NSUInteger, kHSYCocoaKitScrollDirection) {
     
     kHSYCocoaKitScrollDirectionToUp             = 47,   //向上滑动
@@ -18,6 +16,8 @@ typedef NS_ENUM(NSUInteger, kHSYCocoaKitScrollDirection) {
     kHSYCocoaKitScrollDirectionToLeft,                  //向左滑动
     kHSYCocoaKitScrollDirectionToRight,                 //向右滑动
 };
+
+@interface UIScrollView (Pages)
 
 - (NSInteger)hsy_pages;                                         //获取scrollView的总页面数
 - (NSInteger)hsy_currentPage;                                   //获取scrollView的当前的页码
