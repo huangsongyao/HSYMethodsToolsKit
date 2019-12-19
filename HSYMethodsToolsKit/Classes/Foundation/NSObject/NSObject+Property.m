@@ -13,10 +13,10 @@
 + (objc_AssociationPolicy)toObjcAssociationPolicy:(kHSYMethodsToolsKitObjcAssociationPolicy)associationPolicy
 {
     NSDictionary *policys = @{@(kHSYMethodsToolsKitObjcAssociationPolicyAssign) : @(OBJC_ASSOCIATION_ASSIGN),
-                              @(kHSYMethodsToolsKitObjcAssociationPolicyAssign) : @(OBJC_ASSOCIATION_RETAIN_NONATOMIC),
-                              @(kHSYMethodsToolsKitObjcAssociationPolicyAssign) : @(OBJC_ASSOCIATION_COPY_NONATOMIC),
-                              @(kHSYMethodsToolsKitObjcAssociationPolicyAssign) : @(OBJC_ASSOCIATION_RETAIN),
-                              @(kHSYMethodsToolsKitObjcAssociationPolicyAssign) : @(OBJC_ASSOCIATION_COPY), };
+                              @(kHSYMethodsToolsKitObjcAssociationPolicyNonatomicStrong) : @(OBJC_ASSOCIATION_RETAIN_NONATOMIC),
+                              @(kHSYMethodsToolsKitObjcAssociationPolicyNonatomicCopy) : @(OBJC_ASSOCIATION_COPY_NONATOMIC),
+                              @(kHSYMethodsToolsKitObjcAssociationPolicyAtomicStrong) : @(OBJC_ASSOCIATION_RETAIN),
+                              @(kHSYMethodsToolsKitObjcAssociationPolicyAtomicCopy) : @(OBJC_ASSOCIATION_COPY), };
     objc_AssociationPolicy objcAssociationPolicy = (objc_AssociationPolicy)[policys[@(associationPolicy)] integerValue];
     return objcAssociationPolicy;
 } 
