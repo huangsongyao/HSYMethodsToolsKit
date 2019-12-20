@@ -23,7 +23,7 @@
 
 - (id)hsy_getPropertyForKey:(NSString *)key
 {
-    return objc_getAssociatedObject(self, &key);
+    return objc_getAssociatedObject(self, CFBridgingRetain(key));
 }
 
 - (void)hsy_setProperty:(id)property
@@ -32,7 +32,7 @@
 {
     [self willChangeValueForKey:key];
     objc_AssociationPolicy objcAssociationPolicy = [self.class toObjcAssociationPolicy:associationPolicy];
-    objc_setAssociatedObject(self, &key, property, objcAssociationPolicy); 
+    objc_setAssociatedObject(self, CFBridgingRetain(key), property, objcAssociationPolicy);
     [self didChangeValueForKey:key];
 }
 
