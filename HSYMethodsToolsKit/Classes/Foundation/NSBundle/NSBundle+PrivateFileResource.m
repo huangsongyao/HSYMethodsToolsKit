@@ -11,10 +11,14 @@
 
 + (UIImage *)hsy_imageForBundle:(NSString *)imageName
 {
+    UIImage *image = [UIImage imageNamed:imageName];
+    if (image) {
+        return image;
+    }
     NSBundle *resourceBundle = [NSBundle hsy_resourceBundle];
-    UIImage *image = [UIImage imageNamed:imageName
-                                inBundle:resourceBundle
-           compatibleWithTraitCollection:nil];
+    image = [UIImage imageNamed:imageName
+                       inBundle:resourceBundle
+  compatibleWithTraitCollection:nil];
     
     return image;
 }
