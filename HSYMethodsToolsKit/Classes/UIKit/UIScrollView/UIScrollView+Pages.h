@@ -32,7 +32,14 @@ typedef NS_ENUM(NSUInteger, kHSYCocoaKitScrollDirection) {
 - (CGFloat)hsy_contentSizeWidth;                                //获取scrollView的滚动宽度
 - (CGFloat)hsy_contentSizeHeight;                               //获取scrollView的滚动高度
 
-- (NSArray<UIView *> *)hsy_subViews:(Class)classes;             //返回addSubview在UIScrollView对象上归属于同类的对象的集合
+
+/**
+ 返回addSubview在UIScrollView对象上归属于同类的对象的集合
+
+ @param classes 该类型的Class
+ @return NSArray<UIView *> *
+ */
+- (NSArray<UIView *> *)hsy_subViews:(Class)classes;
 
 /**
  上下方向翻页，无动画
@@ -91,6 +98,14 @@ typedef NS_ENUM(NSUInteger, kHSYCocoaKitScrollDirection) {
  @param subview subview
  */
 - (void)hsy_addSubview:(UIView *)subview;
+
+/**
+ 返回处于self.hsy_subviews或者self.subviews的forIndex位置的子视图
+
+ @param forIndex 子视图的index
+ @return UIView
+ */
+- (UIView *)hsy_subview:(NSInteger)forIndex;
 
 @end
 

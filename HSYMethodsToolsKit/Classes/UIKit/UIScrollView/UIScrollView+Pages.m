@@ -13,7 +13,7 @@ static NSString *kHSYMethodsToolsPrivateSubviewsForKey = @"HSYMethodsToolsPrivat
 
 @interface UIScrollView (Private)
 
-@property (nonatomic, strong) NSMutableArray<UIView *> *hsy_subviews;
+@property (nonatomic, strong, readonly) NSMutableArray<UIView *> *hsy_subviews;
 
 @end
 
@@ -24,14 +24,11 @@ static NSString *kHSYMethodsToolsPrivateSubviewsForKey = @"HSYMethodsToolsPrivat
     NSMutableArray<UIView *> *thisSubviews = [self hsy_getPropertyForKey:kHSYMethodsToolsPrivateSubviewsForKey];
     if (!thisSubviews) {
         thisSubviews = [[NSMutableArray alloc] init];
-        [self setHsy_subviews:thisSubviews];
+        [self hsy_setProperty:thisSubviews
+                       forKey:kHSYMethodsToolsPrivateSubviewsForKey
+        objcAssociationPolicy:kHSYMethodsToolsKitObjcAssociationPolicyNonatomicStrong];
     }
     return thisSubviews;
-}
-
-- (void)setHsy_subviews:(NSMutableArray<UIView *> *)hsy_subviews
-{
-    [self hsy_setProperty:hsy_subviews forKey:kHSYMethodsToolsPrivateSubviewsForKey objcAssociationPolicy:kHSYMethodsToolsKitObjcAssociationPolicyNonatomicStrong];
 }
 
 @end
@@ -100,7 +97,8 @@ static NSString *kHSYMethodsToolsPrivateSubviewsForKey = @"HSYMethodsToolsPrivat
 - (NSArray<UIView *> *)hsy_subViews:(Class)classes
 {
     NSMutableArray<UIView *> *views = [[NSMutableArray alloc] init];
-    for (UIView *view in self.subviews) {
+    NSArray *subviews = (self.hsy_subviews.count > 0 ? self.hsy_subviews : self.subviews);
+    for (UIView *view in subviews) {
         if ([view isKindOfClass:classes]) {
             [views addObject:view];
         }
@@ -158,11 +156,14 @@ static NSString *kHSYMethodsToolsPrivateSubviewsForKey = @"HSYMethodsToolsPrivat
 
 - (void)hsy_addSubview:(UIView *)subview
 {
-    if (!self.hsy_subviews) {
-        self.hsy_subviews = [[NSMutableArray alloc] init];
-    }
     [self.hsy_subviews addObject:subview];
     [self addSubview:subview];
+}
+
+- (UIView *)hsy_subview:(NSInteger)forIndex;
+{
+    NSArray *subviews = (self.subviews.count > 0 ? self.subviews : self.subviews);
+    return subviews[forIndex];
 }
 
 @end
