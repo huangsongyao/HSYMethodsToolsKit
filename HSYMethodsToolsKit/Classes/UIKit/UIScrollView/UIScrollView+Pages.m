@@ -166,4 +166,12 @@ static NSString *kHSYMethodsToolsPrivateSubviewsForKey = @"HSYMethodsToolsPrivat
     return subviews[forIndex];
 }
 
+- (NSArray<UIView *> *)hsy_subviews
+{
+    if (self.hsy_subviews.count) {
+        return self.hsy_subviews;
+    }
+    return self.subviews;
+}
+
 @end
