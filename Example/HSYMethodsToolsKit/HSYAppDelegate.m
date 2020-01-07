@@ -9,6 +9,7 @@
 #import "HSYAppDelegate.h"
 #import "NSString+Replace.h"
 #import "NSDate+Timestamp.h"
+#import "NSArray+GridsAlgorithm.h"
 
 @implementation HSYAppDelegate
 
@@ -23,7 +24,13 @@
 //    NSDate *lastDay = date.hsy_yesterday;
 //    NSDate *nextMonts = date.hsy_nextMonths;
 //    NSDate *lastMonts = date.hsy_lastMonths;
-    
+    NSArray *tests = @[@(0), @(1), @(2), @(3),
+                       @(4), @(5), @(6), @(7),
+                       @(8), @(9), @(10), @(11),
+                       @(12), @(13), @(14), @(15), ];
+    NSInteger line = [tests hsy_lines:4];
+    NSInteger column = [tests hsy_columns:4 forIndex:9];
+    NSLog(@"line => %@, column => %@", @(line), @(column));
     
     return YES;
 }
