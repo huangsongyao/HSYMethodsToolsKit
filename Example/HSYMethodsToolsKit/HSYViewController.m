@@ -18,6 +18,8 @@
 #import "HSYBViewController.h"
 #import "UIButton+Loading.h"
 #import "UIView+Layer.h"
+#import "RACSignal+Combined.h"
+#import "RACSignal+Convenients.h"
 
 @interface testJsonModel : JSONModel
 
@@ -90,7 +92,20 @@
 //    [button hsy_setImagePosition:kHSYMethodsToolsButtonImagePositionRight forSpacing:10.0f];
     [self.view addSubview:button];
     
-    
+    [[[RACSignal hsy_zipSignals:@[
+        [RACSignal hsy_sendObjectSignal:@"222"],
+        [RACSignal hsy_sendObjectSignal:@"555"],
+        [RACSignal hsy_sendErrorSignal:[NSError new]],
+        [RACSignal hsy_sendObjectSignal:@"777"],
+        [RACSignal hsy_sendObjectSignal:@"888" afterDelays:2],
+        [RACSignal hsy_sendObjectSignal:@"444" afterDelays:6],
+        [RACSignal hsy_sendObjectSignal:@"000"],
+        [RACSignal hsy_sendObjectSignal:@"111"],
+    ]] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSArray<RACTuple *> * _Nullable x) {
+        
+        RACTuple *last = x.lastObject;
+        NSLog(@"last.first => %@, last.second => %@, last.third => %@", last.first, last.second, last.third);
+    }];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
