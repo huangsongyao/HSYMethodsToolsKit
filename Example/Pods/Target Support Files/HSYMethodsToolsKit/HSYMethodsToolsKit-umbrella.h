@@ -11,6 +11,7 @@
 #endif
 
 #import "NSArray+Finder.h"
+#import "NSArray+GridsAlgorithm.h"
 #import "NSBundle+CFBundle.h"
 #import "NSBundle+PrivateFileResource.h"
 #import "NSData+Encrypt.h"
