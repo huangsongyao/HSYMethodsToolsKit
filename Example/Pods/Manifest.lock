@@ -5,7 +5,7 @@ PODS:
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
   - HSYMacroKit (0.1.4)
-  - HSYMethodsToolsKit (0.1.9):
+  - HSYMethodsToolsKit (0.2.0):
     - HSYMacroKit
     - JSONModel
     - Masonry
@@ -45,7 +45,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   HSYMacroKit: 382477fb48caa2919542868a73ccc473bb331997
-  HSYMethodsToolsKit: 90d7c431a08a89b5d432515e113be28d42df6f74
+  HSYMethodsToolsKit: d843e5b7953b5da64a253ceda18aed68c2518ffc
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
@@ -53,4 +53,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: aa50149824d3158930d1a070e03977c6ce4c35bb
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.5
