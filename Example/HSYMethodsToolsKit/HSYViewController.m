@@ -20,6 +20,8 @@
 #import "UIView+Layer.h"
 #import "RACSignal+Combined.h"
 #import "RACSignal+Convenients.h"
+#import "UIImage+MixColors.h"
+#import <HSYMacroKit/HSYToolsMacro.h>
 
 @interface testJsonModel : JSONModel
 
@@ -106,6 +108,9 @@
         RACTuple *last = x.lastObject;
         NSLog(@"last.first => %@, last.second => %@, last.third => %@", last.first, last.second, last.third);
     }];
+    
+    UIImage *image = [UIImage hsy_imageWithMixColors:@[HSY_HEX_COLOR(0xFFCB35), HSY_HEX_COLOR(0xFF6B32)] size:CGSizeMake(100, 100)];
+    NSLog(@"%@", image);
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

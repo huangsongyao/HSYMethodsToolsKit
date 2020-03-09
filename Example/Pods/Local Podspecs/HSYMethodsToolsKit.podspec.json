@@ -39,5 +39,8 @@
     "HSYMacroKit": [
 
     ]
+  },
+  "xcconfig": {
+    "OTHER_LDFLAGS": "-ObjC"
   }
 }
