@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 绘制多重混合颜色的图片，方向为45度角
 /// @param colors 颜色集合
 /// @param size 图片的size
-+ (UIImage *)imageWithMixColors:(NSArray *)colors size:(CGSize)size;
++ (UIImage *)hsy_imageWithMixColors:(NSArray *)colors size:(CGSize)size;
 
 @end
 

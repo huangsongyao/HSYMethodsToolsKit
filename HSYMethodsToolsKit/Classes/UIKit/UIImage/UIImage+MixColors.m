@@ -10,7 +10,7 @@
 
 @implementation UIImage (MixColors)
 
-+ (UIImage *)imageWithMixColors:(NSArray *)colors size:(CGSize)size
++ (UIImage *)hsy_imageWithMixColors:(NSArray *)colors size:(CGSize)size
 {
     CAGradientLayer *layer = [UIView hsy_gradientLocationLayer:colors
                                                          frame:CGRectMake(0.0f, 0.0f, size.width, size.height)

@@ -54,6 +54,7 @@
 #import "UIScrollView+Pages.h"
 #import "UITableView+Operations.h"
 #import "UITextField+UIKit.h"
+#import "UITextView+Calculated.h"
 #import "UITextView+UIKit.h"
 #import "UIView+Frame.h"
 #import "UIView+GradientColor.h"
